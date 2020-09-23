@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: spring-data-jpa-study
+
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///db01?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    # 格式化sql
+    properties:
+      hibernate:
+        format_sql: true
+
+# 显示sql语句 绑定的参数
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
